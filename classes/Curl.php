@@ -1,14 +1,14 @@
 <?php
 
-class Curl {
-
+class Curl
+{
     /**
      * Makes CURL request
      * @param $url
      * @return false|mixed
      */
-    public function execute($url) {
-
+    public function execute($url)
+    {
         $handle = curl_init($url);
         curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($handle, CURLOPT_CONNECTTIMEOUT, CURLOPT_CONNECTTIMEOUT);
@@ -29,5 +29,4 @@ class Curl {
 
         return $response;
     }
-
 }

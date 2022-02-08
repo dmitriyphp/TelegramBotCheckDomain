@@ -1,7 +1,7 @@
 <?php
 
-class Telegram {
-
+class Telegram
+{
     private $chat_id;
 
     /**
@@ -14,7 +14,8 @@ class Telegram {
      */
     private $domain;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->curl = new Curl();
         $this->domain = new DomainChecker();
     }
@@ -23,8 +24,8 @@ class Telegram {
      * Accept message from Telegram bot
      * @param $message
      */
-    public function accept($message) {
-
+    public function accept($message)
+    {
         $this->chat_id = $message['chat']['id'];
 
         if (isset($message['text'])) {
@@ -54,8 +55,8 @@ class Telegram {
      * Answer to client
      * @param $message
      */
-    public function answer($message) {
-
+    public function answer($message)
+    {
         $parameters = array(
             'chat_id' => json_encode($this->chat_id),
             'text' => $message
